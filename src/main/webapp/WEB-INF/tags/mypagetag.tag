@@ -62,6 +62,15 @@ function sendmessagePopup(){
 function userInfoPopup(){
 	var url = "myPageTab/userInfoUpdateForm.html";
 	
+	var newOption = setting(500,500);
+	
+	window.open(url,"",newOption);
+}
+
+/* 내 쪽지함 버튼 이벤트 */
+function myMsgsPopup(){
+	var url = "myPageTab/myMsgs.html";
+	
 	var newOption = setting(500,471);
 	
 	window.open(url,"",newOption);
@@ -120,7 +129,7 @@ function userInfoPopup(){
 					
 					<tr >
 						<td style="padding-top:5px">
-							<a href="" style="font-size:13px;color:#7d7d7d">
+							<a href="javascript:myMsgsPopup();" style="font-size:13px;color:#7d7d7d">
 								<img src="${path }/resources/images/msg.png" alt="" />쪽지함
 								<img src="${path }/resources/images/i3.jpg" alt="" />
 							</a>
