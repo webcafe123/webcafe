@@ -43,4 +43,10 @@ public class MyPageController {
 		
 		return "myPageTab/userInfoUpdateForm";
 	}
+	
+	@RequestMapping("myPageTab/myMsgs")
+	public String myMsgs() {
+		
+		return "myPageTab/myMsgs";
+	}
 }
