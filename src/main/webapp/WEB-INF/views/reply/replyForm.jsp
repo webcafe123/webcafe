@@ -11,7 +11,7 @@
 <body>
 
 <div id="refo" class="container" align="center" style="height:115px;border-radius:3px;">
-	<form action="insertReply" method="post">
+	<form action="insertReply.html" method="post">
 		<input type="hidden" name="r_num" value="0">	
 		<input type="hidden" name="r_b_num" value="100">
 		<c:if test="${empty r_ref || r_ref==0}">

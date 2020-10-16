@@ -43,7 +43,7 @@ public class ReplyController {
 		}
 		rs.insert(reply);
 		model.addAttribute("r_b_num", reply.getR_b_num());
-		return "redirect:replyList?r_b_num="+reply.getR_b_num();
+		return "redirect:replyList.html?r_b_num="+reply.getR_b_num();
 	}
 	
 	@RequestMapping("updateReply")
@@ -54,13 +54,13 @@ public class ReplyController {
 		reply.setR_num(r_num);
 		reply.setR_content(r_content);
 		rs.update(reply);
-		return "redirect:replyList?r_b_num="+r_b_num;
+		return "redirect:replyList.html?r_b_num="+r_b_num;
 	}
 	
 	@RequestMapping("deleteReply")
 	public String delete(int r_b_num, int r_num, Model model) {
 		rs.delete(r_num);
-		return "redirect:replyList?r_b_num="+r_b_num;
+		return "redirect:replyList.html?r_b_num="+r_b_num;
 	}
 
 	@RequestMapping("replyList")
