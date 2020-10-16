@@ -8,11 +8,11 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
-		$('#replyFormDisp').load('replyForm?r_ref=0');
+		$('#replyFormDisp').load('replyForm.html?r_ref=0');
 	});
 	function rDelete(r_b_num, r_num){
 		var sendData = 'r_b_num='+r_b_num+'&r_num='+r_num;
-		$.post('deleteReply', sendData, function(data){
+		$.post('deleteReply.html', sendData, function(data){
 			alert("댓글 삭제 성공");
  			$('#repListDisp').html(data);
 		});
@@ -34,13 +34,13 @@
 	}
 	function up(r_b_num, r_num){
 		var sendData = 'r_content='+$('#rCont2_'+r_num).val()+'&r_b_num='+r_b_num+'&r_num='+r_num;
-		$.post('updateReply', sendData, function(data){
+		$.post('updateReply.html', sendData, function(data){
 			alert("수정 성공");
  			$('#repListDisp').html(data);
 		});
 	}
 	function lst(r_b_num){
-		$('#repListDisp').load('replyList?r_b_num='+r_b_num);
+		$('#repListDisp').load('replyList.html?r_b_num='+r_b_num);
 	}
 	function modKey(r_num){
 		$('#tab_pop_'+r_num).appendTo('#modIcon_'+r_num);
@@ -51,7 +51,7 @@
 	}
 	function replKey(r_num,r_level){
 		$('#replDiv_'+r_num).attr('style','display:active;');
-  		$('#replInDiv_'+r_num).load('replyForm?r_ref='+r_num);		
+  		$('#replInDiv_'+r_num).load('replyForm.html?r_ref='+r_num);		
 	}
 	function iconDown(r_num){
 		$('#replIcon_'+r_num).attr('class','glyphicon glyphicon-circle-arrow-up');
