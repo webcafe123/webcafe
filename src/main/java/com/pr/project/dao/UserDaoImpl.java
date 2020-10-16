@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.pr.project.model.User;
 
-@Repository // Dao객체 생성
+@Repository // Dao객체 생성0
 public class UserDaoImpl implements UserDao {
 
 	// mybatis 연결
