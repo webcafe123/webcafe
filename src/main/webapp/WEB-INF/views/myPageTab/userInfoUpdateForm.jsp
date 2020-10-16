@@ -15,6 +15,15 @@ function winClose(){
 	window.open('', '_self').close();
 }
 
+/* 닉네임 중복확인  */
+function checking(){
+	
+	$.post("nickNoChk.html","user_nickname="+frm.user_nickname.value, 
+			function(data) {
+		$('#err').html(data);
+	})
+}
+ 
 </script>
 </head>
 <body>
@@ -25,13 +34,21 @@ function winClose(){
 <span style="padding-bottom:7px"> &nbsp;</span>
 <div class="container" >
 	<div >
+	<form action="#" name="frm">
 		<table style="background-color:#EAEAEA;" align="center">
 		<tr style="padding-left:10px"> 
 			<td style="padding-left:30px;padding-right:30px;padding-top:10px;font-size:13px;font-weight:bolder"> 별명 </td>
-			<td style="padding-top:10px;padding-right:30px"> <input type="text" >  
-			<a id="" href="#" role="button"><img src="https://ssl.pstatic.net/static/cafe/myinfo/btn_confirm.gif" alt="중복확인"></a>	
+			<td style="padding-top:10px;padding-right:30px"> <input type="text"  name="user_nickname" placeholder="닉네임" >  
+			<a id="nickChk" href="#" role="button"  onclick="checking()" ><img src="https://ssl.pstatic.net/static/cafe/myinfo/btn_confirm.gif" alt="중복확인"></a>	
 			</td>
 			
+		</tr>
+		<tr> 
+			<td style="font-size:13px;">  </td>
+			<td style="font-size:11px;color:red;padding-right:10px;padding-top:3px"> 
+			
+				 <div id="err" class="err" style="padding-bottom:1px">  </div>
+			</td>
 		</tr>
 		<tr> 
 			<td style="font-size:13px;">  </td>
@@ -100,9 +117,10 @@ function winClose(){
 		
 		<div class="contiainer" align="center" style="padding-top:30px">
 		<a href="javascript:winClose();" class="btn btn-default">취소</a>
-		<a href="" class="btn " style="background-color:#03cf5d;"><span style="color:white"> 확인</span></a> &nbsp; 
+		<a href="" type="submit" class="btn " style="background-color:#03cf5d;"><span style="color:white"> 확인</span></a> &nbsp; 
 	
 		</div>
+		</form>
 	</div>
 </div>
 </body>

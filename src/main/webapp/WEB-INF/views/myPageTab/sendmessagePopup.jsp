@@ -23,7 +23,7 @@ function winClose(){
 	<br/>
  		<span style="font-weight:bolder;font-size:14px">받는 사람</span> &nbsp; 
  		<span>
- 			<input type="text" name="nickname">
+ 			<input type="text" name="receiveId" value="${user_id }">
  			<button class="btn btn-sm btn-default" type="submit">확인</button> 
  		</span>
  		<!-- <span style="font-size:14px"> 닉네임(pyj0**) </span>  -->

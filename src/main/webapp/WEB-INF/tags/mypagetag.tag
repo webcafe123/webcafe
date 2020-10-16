@@ -85,8 +85,8 @@ function myMsgsPopup(){
 <tr style="color:#7d7d7d"> 
 	<td style="padding-bottom:7px"> <img width=64 height=64 alt="" src="${path }/resources/images/basic_profile.png"> </td>
 	<td style="padding-left:5px;padding-bottom:7px">
-		<p style="font-size:13px;color:black;font-weight:bolder; padding-top:5px"> 닉네임 </p> 
-		가입 2020.10.14. <br>
+		<p style="font-size:13px;color:black;font-weight:bolder; padding-top:5px">  ${user_nickname } </p> 
+		가입 ${user_regdate } <br>
 		
 	 </td>
 </tr>
