@@ -28,7 +28,9 @@
 </c:forEach>
 </c:if>
 </table>
-<a href="/board/insertForm" class="btn btn-info">게시글 입력</a>
+<a href="${path}/board/insertForm.html" class="btn btn-info">게시글 입력</a> 
+<a href="${path}/bigcategory/list.html" class="btn btn-success">빅카테고리 list</a>
+<a href="${path}/category/list.html" class="btn btn-success">카테고리 list</a>
 </div>
 
 <h1>유정 수정~</h1>
