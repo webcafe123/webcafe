@@ -1,7 +1,9 @@
 package com.pr.project.model;
 
 import java.sql.Date;
+import lombok.Data;
 
+@Data
 public class Category {
     private int cNum;
     private int c_bcNum;
