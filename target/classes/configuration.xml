@@ -5,8 +5,14 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<typeAliases>
 		<typeAlias alias="board" type="com.pr.project.model.Board"/>
+		<typeAlias alias="bigCategory" type="com.pr.project.model.BigCategory"/>
+		<typeAlias alias="category" type="com.pr.project.model.Category"/>
+		<typeAlias alias="cate" type="com.pr.project.model.Cate"/>
 	</typeAliases>
 	<mappers>
 		<mapper	resource="board.xml" />
+		<mapper	resource="bigCategory.xml" />
+		<mapper	resource="category.xml" />
+		<mapper	resource="cate.xml" />
 	</mappers>
 </configuration>

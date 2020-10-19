@@ -3,9 +3,20 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bigCategoryns">
 
-<select id="insert" resultType="bigCategory">
-	insert into 
+<select id="list" resultType="bigCategory">
+	select * from big_category order by bc_num desc
 </select>
+<select id="select" parameterType="integer" resultType="bigCategory">
+	select * from big_category where bc_step=#{bcStep}
+</select>
+
+<insert id="insertBigCate" parameterType="bigCategory">
+	<selectKey keyProperty="bcNum" order="BEFORE" resultType="integer">
+		select nvl(max(bc_num),0) + 1 from big_category
+	</selectKey>
+	insert into big_category values(#{bcNum},#{bcStep},#{bcSubject})
+</insert>
+
 
 
 

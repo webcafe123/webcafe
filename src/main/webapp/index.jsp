@@ -6,9 +6,10 @@
 <body>
 
 <script type="text/javascript">
-	//location.href="board/list";
-	location.href="board/insertBigCategory";
-
+	location.href="cate/cate.html";
+	//location.href="cate/cateList.html";
+	//location.href="board/list.html";
+	//location.href="home.html"
 </script>
 
 </body>
