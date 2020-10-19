@@ -1,6 +1,8 @@
-<%@ tag language="java" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp" %>
+<% request.setCharacterEncoding("utf-8"); %>
+
 
 <!-- popup -->
 <script type="text/javascript">
@@ -87,7 +89,16 @@ function myMsgsPopup(){
 	<td style="padding-bottom:7px"> 
 
 	<!-- 프로필 바꾸는 곳 -->
-	<img id="profile" name="profile" width=64 height=64 alt="" src="${path }/resources/images/basic_profile.png"> </td>
+	<c:if test="${profile == 'profile1' }">	
+		<img id="profile" name="profile" width=64 height=64 alt="" src="${path }/resources/images/profile1.png">
+	</c:if>
+	<c:if test="${profile == 'profile2' }">	
+		<img id="profile" name="profile" width=64 height=64 alt="" src="${path }/resources/images/profile2.png">
+	</c:if>
+	<c:if test="${profile == 'profile3' }">	
+		<img id="profile" name="profile" width=64 height=64 alt="" src="${path }/resources/images/profile3.png">
+	</c:if>
+	 </td>
 	<td style="padding-left:5px;padding-bottom:7px">
 		<p style="font-size:13px;color:black;font-weight:bolder; padding-top:5px">  ${user_nickname } </p> 
 		 가입 ${user_regdate } <br> 

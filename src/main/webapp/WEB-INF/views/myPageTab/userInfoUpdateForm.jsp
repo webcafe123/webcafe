@@ -18,11 +18,14 @@ function winClose(){
 /* 닉네임 중복확인  */
 function checking(){
 	
-	$.post("nickNoChk.html","user_nickname="+frm.user_nickname.value, 
+	$.post("nickNoChk.html","user_nickname="+updateSuccess.user_nickname.value, 
 			function(data) {
 		$('#err').html(data);
 	})
 }
+
+//var radioVal = $(':radio[name="inlineRadioOptions"]:checked').val();
+
  
 </script>
 </head>
@@ -34,7 +37,7 @@ function checking(){
 <span style="padding-bottom:7px"> &nbsp;</span>
 <div class="container" >
 	<div >
-	<form action="#" name="frm">
+	<form name="updateSuccess" action="updateSuccess.html"  method="post">
 		<table style="background-color:#EAEAEA;" align="center">
 		<tr style="padding-left:10px"> 
 			<td style="padding-left:30px;padding-right:30px;padding-top:10px;font-size:13px;font-weight:bolder"> 별명 </td>
@@ -78,7 +81,7 @@ function checking(){
   				<img id="" width=100 height=100 src="${path }/resources/images/profile1.png"> 
   				</label>
   				<br>
-  				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" >
+  				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="profile1" value="profile1" checked>
 				</div>
 			</td>
 			<td style="padding-top:15px;"> 
@@ -88,7 +91,7 @@ function checking(){
   				
   				</label>
   				<br>
-  				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" >
+  				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="profile2" value="profile2" >
 				</div>
 			</td>
 			<td style="padding-top:15px;"> 
@@ -97,9 +100,10 @@ function checking(){
   				<img id="" width=100 height=100 src="${path }/resources/images/profile3.png"> 
   				</label>
   				<br>
-  				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" >
+  				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="profile3" value="profile3" >
 				</div>
 			</td>
+			
 			
 		</tr>
 		
@@ -117,11 +121,13 @@ function checking(){
 		
 		<div class="contiainer" align="center" style="padding-top:30px">
 		<a href="javascript:winClose();" class="btn btn-default">취소</a>
-		<a href="" type="submit" class="btn " style="background-color:#03cf5d;"><span style="color:white"> 확인</span></a> &nbsp; 
+		<a href="javascript:updateSuccess.submit();" class="btn " style="background-color:#03cf5d;"><span style="color:white"> 확인</span></a> &nbsp; 
 	
 		</div>
 		</form>
 	</div>
 </div>
+
+	 
 </body>
 </html>

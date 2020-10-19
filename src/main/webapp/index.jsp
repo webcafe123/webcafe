@@ -6,6 +6,13 @@
 <body>
 
 <script type="text/javascript">
+
+
+	//location.href="home_yj.html"
+	//location.href="replyList.html?r_b_num=100";
+	
+	//ggg
+
 	//location.href="cate/cate.html";
 	//location.href="cate/cateList.html";
 	//location.href="board/list.html";
@@ -21,6 +28,7 @@
 	location.href="home.html"
 	//location.href="home_yj.html"
 	//location.href="replyList.html?r_b_num=100";
+
 </script>
 
 </body>

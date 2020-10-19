@@ -149,8 +149,8 @@
 			<div id="myacti_span" style="height:210px;display:none;padding-top:7px;padding-bottom:7px">
 				
 								
-				<u:mypagetag> </u:mypagetag>
-				
+				<%-- <u:mypagetag> </u:mypagetag> --%>
+				<jsp:include page="myPageTab/mypage.jsp"></jsp:include>
 				
 				
 			</div>
@@ -167,7 +167,7 @@
 			<!-- 게시판 category -->
 			
 			<section id="categorybar">
-			<div style="height:40px;padding-top:3px;border-top:2px solid black;border-bottom:1px solid #ededed;">
+			<div style="height:40px;width:190px;padding-top:3px;border-top:2px solid black;border-bottom:1px solid #ededed;">
 			
 			<u:categoriestag />
 			

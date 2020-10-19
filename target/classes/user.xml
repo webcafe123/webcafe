@@ -36,4 +36,8 @@
 		select *
 		from user_info where user_nickname = #{user_nickname}
 	</select>
+	
+	<update id="updateN" parameterType="string">
+		update user_info set user_nickname = #{user_nickname} where user_id = 'pyj078'
+	</update>
 </mapper>
