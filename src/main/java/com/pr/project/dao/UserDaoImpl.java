@@ -40,4 +40,10 @@ public class UserDaoImpl implements UserDao {
 		
 		return sst.selectOne("userns.selectN",user_nickname);
 	}
+
+	@Override
+	public int updateN(User user) {
+		
+		return sst.update("userns.updateN",user);
+	}
 }

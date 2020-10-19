@@ -1,15 +1,20 @@
 package com.pr.project.controller;
 
-import java.util.List;
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
+import com.pr.project.model.Message;
 import com.pr.project.model.User;
+import com.pr.project.service.MessageService;
 import com.pr.project.service.MyPageService;
 import com.pr.project.service.UserService;
 
@@ -20,10 +25,12 @@ public class MyPageController {
 	 
 	@Autowired
 	private MyPageService mps;
+	@Autowired
+	private MessageService msgs;
 	
 	
 	@RequestMapping("home_yj")
-	public String home_yj( String user_id, String user_nickname, String user_regdate, Model model) {
+	public String home_yj( String user_id, String user_nickname, String user_regdate, Model model,HttpSession session) throws IOException {
 		
 		user_id = "pyj078";
 		user_nickname="유댕ㅎㅎ";
@@ -32,6 +39,12 @@ public class MyPageController {
 		model.addAttribute("user_id", user_id);
 		model.addAttribute("user_nickname", user_nickname);
 		model.addAttribute("user_regdate",user_regdate);
+		
+		Object profile = session.getAttribute("profile");
+		
+		model.addAttribute("profile", profile);
+		
+		System.out.print("메인화면의 : " + profile);
 		
 		return "home_yj";
 	}
@@ -58,11 +71,24 @@ public class MyPageController {
 		
 		model.addAttribute("user_id", user_id);
 		
+		
+		
 		return "myPageTab/sendmessagePopup";
 	}
 	
+	@RequestMapping("myPageTab/msgSuccess")
+	public String msgSuccess(Message message, Model model, HttpSession session) throws IOException{
+		
+		int result = 0;
+		result = msgs.insert(message);
+		
+		model.addAttribute("result",  result);
+		model.addAttribute("message", message);
+		return "myPageTab/msgSuccess";
+	}
+	
 	@RequestMapping("myPageTab/userInfoUpdateForm")
-	public String userInfoUpdateForm(String user_nickname, Model model) {
+	public String userInfoUpdateForm(String user_nickname, Model model, HttpServletRequest req)throws Exception {
 		
 		//User user = us.selectN(user_nickname);
 		//model.addAttribute("user", user);
@@ -71,7 +97,24 @@ public class MyPageController {
 		model.addAttribute("user_nickname", user_nickname);
 		
 		
+		
 		return "myPageTab/userInfoUpdateForm";
+	}
+	
+	@RequestMapping("myPageTab/updateSuccess")
+	public String updateSuccess(User user, Model model, @RequestParam("inlineRadioOptions") String profile, HttpServletRequest req, HttpSession session) throws IOException{
+		
+		int result = us.updateN(user);
+		
+		model.addAttribute("result", result);
+		model.addAttribute("user", user);
+		model.addAttribute("profile", profile);
+		
+		//req.setAttribute("profile", profile);
+		session.setAttribute("profile", profile);
+		
+		System.out.print(profile);
+		return "myPageTab/updateSuccess";
 	}
 	
 	@RequestMapping(value="/myPageTab/nickNoChk", 
@@ -92,5 +135,9 @@ public class MyPageController {
 		return "myPageTab/myMsgs";
 	}
 	
-	
+	/*
+	 * @RequestMapping("myPageTab/msgSuccess") public String msgSuccess() {
+	 * 
+	 * return "myPageTab/msgSuccess"; }
+	 */
 }

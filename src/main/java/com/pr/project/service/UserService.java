@@ -16,6 +16,8 @@ public interface UserService {
 
 	User selectN(String user_nickname);
 
+	int updateN(User user);
+
 	
 
 }

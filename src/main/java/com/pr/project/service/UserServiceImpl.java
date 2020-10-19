@@ -40,4 +40,10 @@ public class UserServiceImpl implements UserService {
 		return ud.selectN(user_nickname);
 	}
 
+	@Override
+	public int updateN(User user) {
+		
+		return ud.updateN(user);
+	}
+
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="messagens">
+
+	<resultMap type="message" id="msgResult">
+		<result property="m_num" column= "m_num" />
+		<result property = "m_sender_id" column = "m_sender_id" />
+		<result property = "m_sender_nick" column = "m_sender_nick" />
+		<result property = "m_sender_ip" column = "m_sender_ip" />
+		<result property = "m_sender_del" column = "m_sender_del" />
+		<result property = "m_receiver_id" column = "m_receiver_id" />
+		<result property = "m_receiver_nick" column = "m_receiver_nick" />
+		<result property = "m_receiver_del" column = "m_receiver_del" />
+		<result property = "m_subject" column = "m_subject" />
+		<result property = "m_content" column = "m_content" />
+		<result property = "m_send_date" column = "m_send_date" />
+	</resultMap>
+
+
+	<insert id="insert" parameterType="message">
+		<!-- insert into message values
+		(AA.nextval, 'pyj078', '유댕ㅎㅎ', '0:0:0:0', 'n', #{m_receiver_id}, '테스트용','n', '제목없음', #{m_content}, sysdate) -->
+		
+		insert into message values(AA.nextval, 'pyj078', '유댕ㅎㅎ', '0:0:0:0','n', #{m_receiver_id}, 
+		(select user_nickname from user_info
+			where user_id='test'),'n', '제목없음', #{m_content}, sysdate)
+	</insert>
+</mapper>
+
+
+

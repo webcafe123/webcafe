@@ -16,4 +16,6 @@ public interface UserDao {
 
 	User selectN(String user_nickname);
 
+	int updateN(User user);
+
 }
