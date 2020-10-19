@@ -33,6 +33,8 @@
 <a href="${path}/category/list.html" class="btn btn-success">카테고리 list</a>
 </div>
 
+<h1>유정 수정~</h1>
+<h2>유정 수정2222~</h2>
 
 </body>
 </html>
