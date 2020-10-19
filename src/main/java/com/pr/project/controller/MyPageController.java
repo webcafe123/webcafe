@@ -135,9 +135,5 @@ public class MyPageController {
 		return "myPageTab/myMsgs";
 	}
 	
-	/*
-	 * @RequestMapping("myPageTab/msgSuccess") public String msgSuccess() {
-	 * 
-	 * return "myPageTab/msgSuccess"; }
-	 */
+	
 }
